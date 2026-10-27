@@ -157,32 +157,7 @@ Evaluated on single CPU thread with 24 kHz audio output:
 
 ## Quick Start & Usage
 
-### 1. Using `MakHamTTS` (Recommended)
-`MakHamTTS` is a dedicated standalone Thai TTS package that automatically downloads the released INT8 model from [pythainlp/MakHamTTS](https://huggingface.co/pythainlp/MakHamTTS) on first run:
-
-```bash
-pip install -e MakHamTTS
-```
-
-```python
-from makhamtts import TTS
-
-# Automatically resolves and downloads the 82.7 MB INT8 model from Hugging Face
-tts = TTS()
-
-# Synthesize audio to WAV file
-tts.synthesize("สวัสดีค่ะ ยินดีต้อนรับสู่บริการของเรา", "output.wav")
-
-# Or get float32 numpy audio array (24 kHz)
-audio = tts.generate("ยอดเงินคงเหลือสามพันห้าร้อยบาทถ้วน")
-```
-
-Or via CLI:
-```bash
-makhamtts "สวัสดีครับ ยินดีต้อนรับสู่ MakHamTTS" -o hello.wav
-```
-
-### 2. Using `Paradee` Python API
+### 1. Using `Paradee` Python API
 The included `paradee` package automatically detects Thai script and routes to `FastThaiG2P`:
 
 ```python
